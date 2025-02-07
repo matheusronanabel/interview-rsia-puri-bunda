@@ -26,6 +26,7 @@ class UserSeeder extends Seeder
                 'name' => $faker->name(),
                 'username' => $faker->userName(),
                 'password' => Hash::make('password'),
+                'join_date' => $faker->dateTimeBetween('now','+2 weeks'),
                 'created_at' => $faker->dateTimeBetween('-2 weeks','now'),
             ];
             DB::table('users')->insert($dataUser);
